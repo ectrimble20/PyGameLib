@@ -81,8 +81,9 @@ class GroupManager(object):
             return self._groups[name]
 
 
-class ImageManager(object):
+class ImageManagerDep(object):
     """
+    This class should be considered depreciated in favor of the imagemanager.ImageManager class
     ImageManager
 
     Centralized image resource holder, this holds Surfaces (images) and their access key, it allows adding, removing

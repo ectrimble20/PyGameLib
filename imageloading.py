@@ -2,6 +2,10 @@ from pygame import Surface
 import pygame
 import os
 
+"""
+These classes should be considered depreciated in favor of the ImageManager class
+"""
+
 
 class SpriteMapLoader(object):
     """
