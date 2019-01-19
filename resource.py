@@ -7,7 +7,7 @@ def load_image(image_dir, image_name, color_key=None, use_alpha=False):
     full_path = path.join(image_dir, image_name)
     if not path.isfile(full_path):
         raise FileNotFoundError("Expected image file {} was not found".format(full_path))
-    surface = pygame.image.load(image_name)
+    surface = pygame.image.load(full_path)
     if use_alpha:
         surface = surface.convert_alpha()
     else:
@@ -46,7 +46,7 @@ def load_sprite_sheet(sheet_surface, sheet_map, image_manager=None):
 
 
 def load_sprite_sheet_map_from_json(json_file) -> dict:
-    if not path.isfile(json):
+    if not path.isfile(json_file):
         raise FileNotFoundError("load_sprite_sheet_map_from_json expects JSON file to be a full path")
     with open(json_file, "r") as handle:
         j_data = json.load(handle)
